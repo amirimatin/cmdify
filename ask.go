@@ -33,8 +33,12 @@ func (a *AskBuilder) Password() string {
 	return result
 }
 
-func (a *AskBuilder) YesNo() *ConfirmBuilder {
-	return &ConfirmBuilder{label: a.label}
+func (a *AskBuilder) YesNo() (bool, error) {
+	return prompt.AskYesNo(a.label)
+}
+
+func (a *AskBuilder) YesNoDefaultYes(defaultYes bool) (bool, error) {
+	return prompt.AskYesNoDefault(a.label, defaultYes)
 }
 
 func (a *AskBuilder) DangerConfirm() {
