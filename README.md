@@ -41,7 +41,7 @@ go get github.com/amirimatin/cmdify
 ```go
 name := cmdify.Ask("What's your name?").Input()
 pass := cmdify.Ask("Enter password").Password()
-cmdify.Ask("Continue?").YesNo().MustConfirm()
+cmdify.Ask("Continue?").YesNo()
 ```
 ✅ Select single option
 
